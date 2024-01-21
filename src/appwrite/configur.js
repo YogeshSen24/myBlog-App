@@ -30,8 +30,9 @@ export class Service{
             throw error
         }
     }
-    async updatePost( slug , {title ,content , featuredImage , status }){
+    async updatePost( slug , {title ,content , image , status }){
         try {
+            console.log(slug);
             return await this.databases.updateDocument(
                 conf.appwriteDatabaseId,
                 conf.appwriteCollectionId ,
@@ -39,7 +40,7 @@ export class Service{
                 {
                     title,
                     content , 
-                    featuredImage ,
+                    image ,
                     status,
                 }
             )
@@ -67,7 +68,7 @@ export class Service{
                 slug 
             )
         } catch (error) {
-            throw error
+            console.log("COUDENT FETCH THE POST!!!  , ERROR " , error )
         }
     }
     async getPosts(queries= [Query.equal("status" , "active")]){
