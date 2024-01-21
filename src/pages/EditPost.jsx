@@ -10,22 +10,24 @@ function EditPost() {
 
   useEffect(() => {
     if (slug) {
+      console.log(slug);
       service.getPost(slug).then((posts) => {
         if (posts) {
           setPost(posts);
+          
         }
       });
     } else {
       navigate("/");
     }
   }, [slug, navigate]);
-  return post ? (
+  return  post ? (
     <div className='py-8'>
     <Container>
         <PostForm post={post} />
     </Container>
 </div>
-  ) : null;
+  ) : <h1>loading...</h1>;
 }
 
 export default EditPost;

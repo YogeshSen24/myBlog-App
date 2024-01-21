@@ -18,7 +18,6 @@ export default function Protected({children , authentication}) {
             console.log("login sucess");
 
         }else{
-
             setLoader(false)
         }
     },[authStatus,navigate,authentication])
