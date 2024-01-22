@@ -44,11 +44,11 @@ function Post() {
                     {isAuthor && (
                         <div className="absolute right-6 top-6">
                             <Link to={`/edit-post/${post.$id}`}>
-                                <Button bgColor="bg-green-500" className="mr-3">
+                                <Button  className="bg-blue-500 hover:bg-blue-700 text-white font-bold p-2 m-2 rounded ">
                                     Edit
                                 </Button>
                             </Link>
-                            <Button bgColor="bg-red-500" onClick={deletePost}>
+                            <Button className="bg-red-500 hover:bg-red-700 text-white font-bold p-2 m-2 rounded " onClick={deletePost}>
                                 Delete
                             </Button>
                         </div>
